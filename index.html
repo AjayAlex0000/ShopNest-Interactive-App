@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f6f0" />
+    <meta
+      name="description"
+      content="Shop thoughtful finds across electronics, clothing, footwear, and books at ShopNest."
+    />
+    <title>ShopNest | Good things, gathered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to products</a>
+    <div class="announcement">
+      A little something for every day <span>·</span> Free shipping over ₹2,000
+    </div>
+
+    <header class="site-header">
+      <a class="wordmark" href="index.html" aria-label="ShopNest home">
+        <span class="wordmark-icon" aria-hidden="true">S</span>
+        <span>shopnest<span class="wordmark-period">.</span></span>
+      </a>
+      <p class="header-note">Good things, gathered.</p>
+      <button
+        class="cart-jump"
+        id="cart-toggle"
+        type="button"
+        aria-controls="cart-panel"
+        aria-expanded="false"
+      >
+        <span class="bag-icon" aria-hidden="true">Bag</span>
+        <span class="cart-count" id="cart-count" aria-label="0 items in cart"
+          >0</span
+        >
+      </button>
+    </header>
+
+    <main id="main-content" class="page-shell">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow">
+            <span class="eyebrow-mark" aria-hidden="true"></span> THE EVERYDAY
+            EDIT
+          </p>
+          <h1 id="page-title">
+            Find your next<br /><span>favorite thing.</span>
+          </h1>
+          <p class="intro-description">
+            Useful, well-made finds for wherever the day takes you.
+          </p>
+        </div>
+        <div class="intro-stamp" aria-hidden="true">
+          <span>CURATED</span>
+          <strong>for<br />living</strong>
+          <span>WELL</span>
+        </div>
+      </section>
+
+      <section class="shop-toolbar" aria-label="Find products">
+        <label class="search-box" for="product-search">
+          <span class="search-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Search products</span>
+          <input
+            id="product-search"
+            type="search"
+            placeholder="Search products..."
+            autocomplete="off"
+          />
+          <kbd aria-hidden="true">⌕</kbd>
+        </label>
+        <nav class="category-filters" aria-label="Filter by category">
+          <button
+            class="filter-button is-active"
+            type="button"
+            data-category="All"
+            aria-pressed="true"
+          >
+            All
+          </button>
+          <button
+            class="filter-button"
+            type="button"
+            data-category="Electronics"
+            aria-pressed="false"
+          >
+            Electronics
+          </button>
+          <button
+            class="filter-button"
+            type="button"
+            data-category="Clothing"
+            aria-pressed="false"
+          >
+            Clothing
+          </button>
+          <button
+            class="filter-button"
+            type="button"
+            data-category="Footwear"
+            aria-pressed="false"
+          >
+            Footwear
+          </button>
+          <button
+            class="filter-button"
+            type="button"
+            data-category="Books"
+            aria-pressed="false"
+          >
+            Books
+          </button>
+        </nav>
+      </section>
+
+      <div class="content-layout">
+        <section class="catalog" aria-labelledby="catalog-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">THE SHOP</p>
+              <h2 id="catalog-title">Good picks, just for you</h2>
+            </div>
+            <p class="result-count" id="result-count" aria-live="polite"></p>
+          </div>
+          <div class="loading-state" id="loading-state" role="status">
+            <span class="loading-dot" aria-hidden="true"></span>
+            <span>Finding the good stuff...</span>
+          </div>
+          <div class="error-state" id="error-state" role="alert" hidden>
+            <p class="error-title">We couldn't load the shop.</p>
+            <p class="error-copy">Check your connection and try again.</p>
+            <button class="retry-button" id="retry-button" type="button">
+              Try again
+            </button>
+          </div>
+          <p class="no-results" id="no-results" role="status" hidden>
+            No products found. Try another search or category.
+          </p>
+          <div
+            class="product-grid"
+            id="product-grid"
+            aria-live="polite"
+            aria-busy="true"
+          ></div>
+        </section>
+
+        <aside class="cart-panel" id="cart-panel" aria-labelledby="cart-title">
+          <div class="cart-heading">
+            <div>
+              <p class="eyebrow">YOUR PICKS</p>
+              <h2 id="cart-title">
+                Shopping bag <span id="cart-heading-count">(0)</span>
+              </h2>
+            </div>
+            <span class="cart-heading-mark" aria-hidden="true">+</span>
+          </div>
+          <div class="cart-items" id="cart-items" aria-live="polite"></div>
+          <p class="empty-cart" id="empty-cart">
+            Your bag is taking a little breather.
+          </p>
+          <p
+            class="storage-notice"
+            id="storage-notice"
+            role="status"
+            hidden
+          ></p>
+          <div class="cart-summary" id="cart-summary">
+            <div class="subtotal-row">
+              <span>Subtotal</span><span id="cart-total">₹0</span>
+            </div>
+            <p class="shipping-note">
+              Shipping and taxes calculated at checkout.
+            </p>
+            <button
+              class="checkout-button"
+              id="checkout-button"
+              type="button"
+              disabled
+            >
+              Checkout <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </aside>
+      </div>
+      <footer class="site-footer">
+        <a class="footer-wordmark" href="index.html">shopnest<span>.</span></a>
+        <p>Thoughtful finds for everyday life.</p>
+        <p class="footer-copyright">© ShopNest</p>
+      </footer>
+    </main>
+  </body>
+</html>
